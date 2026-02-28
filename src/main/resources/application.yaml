@@ -1,3 +1,12 @@
+server:
+  port: 8083
 spring:
   application:
     name: dashboard-service
+  kafka:
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: dashboard-group-${random.uuid}
+      properties:
+        spring.json.trusted.packages: "pl.tradingplatform.*"
