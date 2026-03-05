@@ -28,10 +28,17 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-kafka'
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation("org.springframework.security:spring-security-core:7.1.0-M2")
+    implementation("org.springframework.boot:spring-boot-starter-security:4.1.0-M2")
+    implementation 'org.springframework.security:spring-security-messaging'
+    implementation("org.springframework:spring-websocket:7.0.5")
     implementation 'pl.tradingplatform:trading-common:0.0.1-SNAPSHOT'
     implementation 'com.fasterxml.jackson.core:jackson-databind'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    implementation("io.jsonwebtoken:jjwt-api:0.13.0")
     compileOnly 'org.projectlombok:lombok'
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-websocket-test'
